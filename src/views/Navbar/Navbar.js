@@ -1,11 +1,17 @@
 import React from 'react'
 import './Navbar.scss'
+import logo from '../../assets/logo.webp'
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="logo">
-                <span>Coast Institute of Technology</span>
+                <div className="logo-img">
+                    <img src={logo} alt="" />
+                </div>
+                <div className="logo-text">
+                    <span>Coast Institute of Technology</span>
+                </div>
             </div>
             <div className="items">
                 <span>Overview</span>
@@ -17,7 +23,7 @@ const Navbar = () => {
                 <span>Blog</span>
             </div>
             <div className="event-btn">
-            <button className="events">Events</button>
+                <button className="events">Events</button>
             </div>
         </div>
     )
