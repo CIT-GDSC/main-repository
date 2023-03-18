@@ -47,6 +47,27 @@
                   forth-letter {
                     color: #189E59;
                     font-weight: 400;
+
+                    
+                }
+                .member{
+                    font-size: 1.5rem;
+                    width: 200px;
+                    height: 50px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: #557DBF;
+                    
+                    a{
+                        text-decoration: none;
+                        color: #fff;
+                        background-color: transparent;
+                    }
+                    &:hover{
+                        background-color: #FBBC12;
+                        color: #fff;
+                        transition: 500ms ease-in-out;
+                    }
                 }
             }
         }

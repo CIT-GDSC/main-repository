@@ -27,6 +27,15 @@
         gap: 40px;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
+        color: #FBBC12;
+
+        span{
+
+            &:hover {
+                color: #557DBF;
+                transition: 500ms ease-in-out;
+            }
+        }
     }
 
     .events {
