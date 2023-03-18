@@ -21,6 +21,9 @@ export const Home = () => {
                             and
                             <forth-letter> leadership skills.</forth-letter>
                         </p>
+                        <button className="member">
+                            <a href="#">Join Us</a>
+                        </button>
                     </div>
                 </div>
                 <div className="home-image">
