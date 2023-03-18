@@ -1,0 +1,66 @@
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+.container {
+    padding-top: 80px;
+
+    .content {
+        display: flex;
+        justify-content: space-around;
+
+        .header {
+            width: 40%;
+
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 20px;
+                font: 3em sans-serif;
+                
+            }
+
+            span {
+                font-size: 1.5rem;
+                color: #fff;
+                text-decoration: underline;
+            }
+            .text{
+                font-size: 1.5rem;
+                first-letter {
+                    color: #557DBF;
+                    font-weight: 400
+                  }
+                  
+                  second-letter {
+                    color: #FBBC12;
+                    font-weight: 400;
+                  }
+                  .mail:hover{
+                    text-decoration: none;
+                    color: #FFFFFF;
+                  }
+                  
+                  third-letter {
+                    color: #E1382B;
+                    font-weight: 400;
+                  }
+                  
+                  forth-letter {
+                    color: #189E59;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .home-image {
+
+            img {
+                width: 450px;
+                height: 200px;
+                object-fit: contain;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+}
