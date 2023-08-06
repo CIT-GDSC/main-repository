@@ -1,25 +1,41 @@
-import { defineConfig } from 'vite';
-import fs from "fs/promises"
-import react from '@vitejs/plugin-react';
-export default defineConfig(() => ({
-  esbuild: {
-    loader: "jsx",
-    include: /src\/.*\.jsx?$/,
-    exclude: [],
-  },
+import { defineConfig, transformWithEsbuild } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+
+    // Workaround
+    {
+      name: 'load+transform-js-files-as-jsx',
+      async transform(code, id) {
+        if (!id.match(/src\/.*\.js$/)) {
+          return null;
+        }
+
+        // Use the exposed transform from vite, instead of directly
+        // transforming with esbuild
+        return transformWithEsbuild(code, id, {
+          loader: 'jsx',
+          jsx: 'automatic', // 👈 this is important
+        });
+      },
+    },
+    // End workaround
+
+  ],
+
+  // Workaround before renaming .js to .jsx
   optimizeDeps: {
     esbuildOptions: {
-      plugins: [
-        {
-          name: "load-js-files-as-jsx",
-          setup(build) {
-            build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => ({
-              loader: "jsx",
-              contents: await fs.readFile(args.path, "utf8"),
-            }));
-          },
-        },
-      ],
+      loader: {
+        '.js': 'jsx',
+      },
     },
   },
-}));
+  // End workaround
+
+
+
+})
